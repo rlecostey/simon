@@ -2,6 +2,7 @@ defmodule SimonWeb.GameLive do
   use Phoenix.LiveView
 
   alias Simon.GameServer
+  alias Simon.RemyPlayer
   alias SimonWeb.GameView
 
   @sequence_size 10
@@ -16,7 +17,9 @@ defmodule SimonWeb.GameLive do
   #   [module: RemyPlayer, name: "Rémy"]
   # ]
 
-  @player_configs []
+  @player_configs [
+    [module: RemyPlayer, name: "Rémy"]
+  ]
 
   def render(assigns) do
     GameView.render("index.html", assigns)
